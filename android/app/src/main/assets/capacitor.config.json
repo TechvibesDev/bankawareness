@@ -1,0 +1,6 @@
+{
+	"appId": "example.com.fraudawareness",
+	"appName": "Fraud Awareness",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

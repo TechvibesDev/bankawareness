@@ -1,0 +1,146 @@
+<div id="slide-menu" style="z-index: 9999">
+  <div class="slide-menu-header">
+    <div class="mobile-search">
+      <form action="#" class="search-form" role="search">
+        <input
+          autocomplete="off"
+          class="search-input"
+          name="q"
+          placeholder="Search"
+          type="search"
+          value=""
+        />
+        <button class="search-action" type="submit" value=""></button>
+      </form>
+    </div>
+    <a class="hide-mobile-menu" href="javascript:void(0)" role="button"></a>
+  </div>
+  <div class="slide-menu-flex">
+    <div class="mobile-menu" id="mobile-menu">
+      <ul id="main-mobile-nav" role="menubar">
+        <li>
+          <a
+            routerLink="../home"
+            (click)="navigate('home', $event)"
+            role="menuitem"
+            >Home</a
+          >
+        </li>
+        <li class="has-sub" [ngClass]="{ expanded: isOpen }">
+          <a href="javascript:void(0)" role="menuitem">Categories</a
+          ><button
+            class="submenu-toggle"
+            (click)="isOpen = !isOpen"
+            value=""
+          ></button>
+          <ul
+            class="sub-menu m-sub"
+            [style.display]="isOpen ? 'block' : 'none'"
+          >
+            <li *ngFor="let x of items; let i = index">
+              <a
+                [routerLink]="'../home/' + x.id"
+                (click)="navigate('home/' + x.id, $event)"
+                role="menuitem"
+                >{{ x?.name }}</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a
+            routerLink="../contact"
+            (click)="link('./pages/contactus', $event)"
+            role="menuitem"
+            >Contact Us</a
+          >
+        </li>
+        <li>
+          <a
+            routerLink="../about"
+            (click)="link('./pages/aboutus', $event)"
+            role="menuitem"
+            >About Us</a
+          >
+        </li>
+      </ul>
+    </div>
+    <div class="mm-footer">
+      <div class="mm-social">
+        <ul class="social-icons social">
+          <li class="facebook link-0">
+            <a
+              alt="facebook"
+              class="fa-facebook btn"
+              href="javascript:void(0)"
+              rel="noopener noreferrer"
+              target="_blank"
+              title="facebook"
+            ></a>
+          </li>
+          <li class="twitter link-1">
+            <a
+              alt="twitter"
+              class="fa-twitter btn"
+              href="javascript:void(0)"
+              rel="noopener noreferrer"
+              target="_blank"
+              title="twitter"
+            ></a>
+          </li>
+          <li class="youtube link-2">
+            <a
+              alt="youtube"
+              class="fa-youtube btn"
+              href="javascript:void(0)"
+              rel="noopener noreferrer"
+              target="_blank"
+              title="youtube"
+            ></a>
+          </li>
+          <li class="pinterest link-3">
+            <a
+              alt="pinterest"
+              class="fa-pinterest btn"
+              href="javascript:void(0)"
+              rel="noopener noreferrer"
+              target="_blank"
+              title="pinterest"
+            ></a>
+          </li>
+          <li class="rss link-4">
+            <a
+              alt="rss"
+              class="fa-rss btn"
+              href="javascript:void(0)"
+              rel="noopener noreferrer"
+              target="_blank"
+              title="rss"
+            ></a>
+          </li>
+        </ul>
+      </div>
+      <div class="mm-menu">
+        <ul class="link-list">
+          <li><a href="/" (click)="link('./home', $event)">Home</a></li>
+          <li>
+            <a href="/" (click)="link('./pages/aboutus', $event)">About Us</a>
+          </li>
+          <li>
+            <a href="/" (click)="link('./pages/contactus', $event)"
+              >Contact Us</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="overlay" data-id="overlay"></div>
+<a
+  class="btn"
+  href="javascript:void(0)"
+  id="back-top"
+  role="button"
+  title="Back To Top"
+></a>

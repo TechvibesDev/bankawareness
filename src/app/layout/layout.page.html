@@ -1,0 +1,169 @@
+<div id="outer-wrapper">
+    <ion-content [fullscreen]="true" style="min-height: 100vh !important;" id="main">
+        <app-header></app-header>
+        <!-- Header -->
+        <div class="flex-center" id="content-wrapper" style="margin-top: 68px !important;">
+            <div class="container row-x1 flex-sb" style="transform: none;">
+                <main id="main-wrapper" style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1px;">
+
+
+
+                    <div class="theiaStickySidebar" style="padding-top: 0px; padding-bottom: 1px; position: static; transform: none;">
+                        <div class="main section" id="main">
+                            <div class="widget Blog" data-version="2" id="Blog1">
+                                <div class="blog-posts item-post-wrap flex-col" *ngIf="!isLoading">
+                                    <!-- Article start -->
+
+                                    <article class="blog-post hentry item-post flex-col">
+
+                                        <div class="item-post-inner flex-col">
+                                            <div class="entry-header p-eh flex-col has-meta">
+                                                <nav id="breadcrumb"><a class="home" routerLink="../../home">Home</a>
+                                                    <em class="separator"></em><a class="label" href="javascript:void(0)">{{data?.subcategory}}</a>
+                                                </nav>
+                                                <h1 class="entry-title">{{data?.posttitle}}</h1>
+                                                <div class="entry-meta">
+                                                    <div class="align-left">
+                                                        <span class="entry-author mi">
+                                                        <span class="author-avatar-wrap">
+                                                            <span class="author-avatar" data-image="assets/images/profile.jpg"></span>
+                                                        </span>
+                                                        <span class="by sp">by</span>
+                                                        <span class="author-name">Mohammed Idris</span>
+                                                        </span>
+                                                        <span class="entry-time mi"><span class="sp">•</span><time class="published" [attr.datetime]="data?.postingdate">{{data?.postingdate | date:'MMMM dd, yyyy'}}</time></span>
+                                                    </div>
+                                                    <div class="align-right">
+                                                        <span class="entry-comments-link show">0</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="entry-content-wrap flex-col">
+                                                <div style="text-align: center;">
+                                                    <img [alt]="data?.posttitle" border="0" data-original-height="533" data-original-width="800" [src]="data?.postimage" [title]="data?.posttitle" />
+                                                </div>
+                                                <br/>
+                                                <div class="post-body entry-content" [innerHTML]="data?.postdetails" id="post-body"></div>
+                                                <div class="entry-labels">
+                                                    <span class="labels-label">Tags:</span>
+                                                    <a class="label-link" *ngFor="let x of tags" [routerLink]="'../../home/'+x.id" rel="tag">{{x?.tag}}</a>
+                                                </div>
+                                                <div class="post-share">
+                                                    <ul class="share-links social social-bg">
+                                                        <li class="facebook has-span">
+                                                            <a class="fa-facebook btn pbt-window" data-height="500" data-url="#" data-width="520" href="javascript:void(0)" rel="noopener noreferrer" title="Facebook"><span>Facebook</span></a>
+                                                        </li>
+                                                        <li class="twitter has-span">
+                                                            <a class="fa-twitter btn pbt-window" data-height="520" data-url="#" data-width="860" href="javascript:void(0)" rel="noopener noreferrer" title="Twitter"><span>Twitter</span></a></li>
+                                                        <li class="whatsapp">
+                                                            <a class="fa-whatsapp btn pbt-window" data-height="520" data-url="#" data-width="860" href="javascript:void(0)" rel="noopener noreferrer" title="WhatsApp"></a>
+                                                        </li>
+                                                        <li class="pinterest-p">
+                                                            <a class="fa-pinterest-p btn pbt-window" data-height="520" data-url="#" data-width="860" href="javascript:void(0)" rel="noopener noreferrer" title="Pinterest"></a>
+                                                        </li>
+                                                        <li class="linkedin">
+                                                            <a class="fa-linkedin-in btn pbt-window" data-height="520" data-url="#" data-width="860" href="javascript:void(0)" rel="noopener noreferrer" title="LinkedIn"></a>
+                                                        </li>
+                                                        <li class="reddit">
+                                                            <a class="fa-reddit-alien btn pbt-window" data-height="520" data-url="#" data-width="860" href="javascript:void(0)" rel="noopener noreferrer" title="Reddit"></a>
+                                                        </li>
+                                                        <li class="tumblr">
+                                                            <a class="fa-tumblr btn pbt-window" data-height="520" data-url="#" data-width="860" href="javascript:void(0)" rel="noopener noreferrer" title="Tumblr"></a>
+                                                        </li>
+                                                        <li class="telegram">
+                                                            <a class="fa-telegram-plane btn pbt-window" data-height="520" data-url="#" data-width="860" href="javascript:void(0)" rel="noopener noreferrer" title="Telegram"></a>
+                                                        </li>
+                                                        <li class="email">
+                                                            <a class="fa-email btn pbt-window" data-height="500" data-url="#" data-width="520" href="javascript:void(0)" rel="noopener noreferrer" title="Email"></a>
+                                                        </li>
+                                                        <li class="show-hid">
+                                                            <a class="btn" href="javascript:void(0)" rel="nofollow" title="Show more"></a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <footer class="post-footer flex-col">
+                                            <div class="about-author">
+                                                <div class="author-avatar-wrap">
+                                                    <span class="author-avatar pbt-lazy" data-image="assets/images/profile.icon" style="background-image: url(&quot;assets/images/profile.icon&quot;);"></span>
+                                                </div>
+                                                <div class="author-description flex-col">
+                                                    <h3 class="author-title"><a alt="John Doe" href="javascript:void(0)" rel="noopener noreferrer" target="_blank">Mohammed Idris</a></h3>
+                                                    <p class="author-text excerpt">
+                                                        Student of computer science department The Polytechnic Bali class of 2022.
+                                                    </p>
+                                                    <ul class="author-links social social-color">
+                                                        <li class="facebook">
+                                                            <a class="fa-facebook" href="javascript:void(0)" title="facebook" rel="noopener noreferrer" target="_blank"></a>
+                                                        </li>
+                                                        <li class="twitter">
+                                                            <a class="fa-twitter" href="javascript:void(0)" title="twitter" rel="noopener noreferrer" target="_blank"></a>
+                                                        </li>
+                                                        <li class="pinterest">
+                                                            <a class="fa-pinterest" href="javascript:void(0)" title="pinterest" rel="noopener noreferrer" target="_blank"></a>
+                                                        </li>
+                                                        <li class="youtube">
+                                                            <a class="fa-youtube" href="javascript:void(0)" title="youtube" rel="noopener noreferrer" target="_blank"></a>
+                                                        </li>
+                                                        <li class="external-link">
+                                                            <a class="fa-external-link" href="javascript:void(0)" title="external-link" rel="noopener noreferrer" target="_blank"></a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div id="related-wrap" class="type-related">
+                                                <div class="title-wrap related-title">
+                                                    <h3 class="title has-icon">
+                                                        <span class="t-text">You might like</span>
+                                                    </h3>
+                                                </div>
+                                                <div class="starter-preview-related-content">
+                                                    <div class="related-posts">
+                                                        <div *ngFor="let x of related; let i=index" class="related-item item-0">
+                                                            <a [title]="x?.posttitle" class="entry-image-wrap is-image" [routerLink]="'../../details/'+x.pid">
+                                                                <span class="entry-image pbt-lazy" [attr.data-image]="x?.postimage" style="background-image: url({{x?.postimage}});"></span>
+                                                            </a>
+                                                            <div class="entry-header">
+                                                                <h2 class="entry-title">
+                                                                    <a [routerLink]="'../../details/'+x.pid" [title]="x?.posttitle">{{x?.posttitle}}</a>
+                                                                </h2>
+                                                                <div class="entry-meta">
+                                                                    <span class="entry-time mi"><time class="published" [attr.datetime]="x?.postdate">{{x?.postdate | date:'MMMM dd, yyyy'}}</time></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </footer>
+                                    </article>
+                                    <!-- //Article end -->
+                                </div>
+                                <div class="blog-posts item-post-wrap flex-col" *ngIf="isLoading">
+                                    <article class="blog-post hentry item-post flex-col">
+                                        <div class="item-post-inner flex-col">
+                                            <div class="entry-header p-eh flex-col">
+
+                                            </div>
+                                            <div class="entry-content-wrap flex-col">
+                                                <div class="post-body entry-content ion-text-center" id="post-body">
+                                                    <div class="loader"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+                <app-aside></app-aside>
+            </div>
+        </div>
+        <!-- Footer Wrapper -->
+        <app-footer></app-footer>
+    </ion-content>
+</div>
+<!-- Mobile Menu and Back Top -->
+<app-mobile></app-mobile>

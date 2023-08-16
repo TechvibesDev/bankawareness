@@ -1,0 +1,122 @@
+<header id="header-wrapper" style="position: fixed; background-color: #fff">
+  <div class="main-header">
+    <div class="header-inner show">
+      <div class="header-header flex-center">
+        <div class="container row-x1">
+          <div class="header-items">
+            <div class="flex-left">
+              <a
+                class="mobile-menu-toggle"
+                href="javascript:void(0)"
+                role="button"
+                title="Menu"
+              ></a>
+              <div when="sm" class="main-logo section" id="main-logo">
+                <div class="widget Image " data-version="2" id="Image100">
+                  <a class="logo-img" href="javascript:void(0)" rel="home">
+                    <img
+                      alt="#"
+                      id="appLogo"
+                      data-dark-src="assets/images/logo_dark.png"
+                      data-src="assets/images/logo.png"
+                      height="80"
+                      [src]="
+                        isDark
+                          ? 'assets/images/logo_dark.png'
+                          : 'assets/images/logo.png'
+                      "
+                      title="Logo"
+                    />
+                  </a>
+                </div>
+              </div>
+              <div
+                class="starter-preview-main-nav section"
+                id="starter-preview-main-nav"
+              >
+                <div
+                  class="widget LinkList show-menu"
+                  data-version="2"
+                  id="LinkList100"
+                >
+                  <ul id="starter-preview-main-nav-menu" role="menubar">
+                    <li>
+                      <a
+                        [routerLink]="fmtUrl('')"
+                        role="menuitem"
+                        >Home</a
+                      >
+                    </li>
+                    <li class="has-sub">
+                      <a href="javascript:void(0)" role="menuitem"
+                        >Categories</a
+                      >
+                      <ul class="sub-menu m-sub">
+                        <li *ngFor="let x of items">
+                          <a
+                            [routerLink]="fmtUrl(x.id)"
+                            role="menuitem"
+                            >{{ x?.name }}</a
+                          >
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a
+                        [routerLink]="
+                          url == '/home' ? '../pages/contact' : '../contact'
+                        "
+                        role="menuitem"
+                        >Contact Us</a
+                      >
+                    </li>
+                    <li>
+                      <a [routerLink]=" url == '/home' ? '../pages/about' : '../about'" role="menuitem"
+                        >About Us</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="flex-right">
+              <div class="tgl-wrap">
+                <a
+                  class="tgl-style darkmode-toggle"
+                  href="javascript:void(0)"
+                  role="button"
+                ></a>
+                <a
+                  class="tgl-style show-search"
+                  href="javascript:void(0)"
+                  role="button"
+                  title="Search"
+                ></a>
+              </div>
+            </div>
+            <div id="main-search-wrap">
+              <div class="main-search">
+                <form
+                  action="javascript:void(0)"
+                  class="search-form"
+                  target="_top"
+                >
+                  <input
+                    aria-label="Search"
+                    autocomplete="off"
+                    class="search-input"
+                    name="q"
+                    placeholder="Search"
+                    type="search"
+                    value=""
+                  />
+                  <button class="search-close" type="reset" value=""></button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Fraud Awareness</string>
+    <string name="title_activity_main">Fraud Awareness</string>
+    <string name="package_name">example.com.fraudawareness</string>
+    <string name="custom_url_scheme">example.com.fraudawareness</string>
+</resources>

@@ -1,0 +1,59 @@
+<div id="outer-wrapper">
+    <ion-content [fullscreen]="true" style="min-height: 100vh !important;" id="main">
+        <app-header></app-header>
+        <!-- Header -->
+        <div class="flex-center" id="content-wrapper" style="margin-top: 68px !important;">
+            <div class="container row-x1 flex-sb" style="transform: none;">
+                <main id="main-wrapper" style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1px;">
+
+
+
+                    <div class="theiaStickySidebar" style="padding-top: 0px; padding-bottom: 1px; position: static; transform: none;">
+                        <div class="main section" id="main">
+                            <div class="widget Blog" data-version="2" id="Blog1">
+                                <div class="blog-posts item-post-wrap flex-col" *ngIf="!isLoading">
+                                    <!-- Article start -->
+
+                                    <article class="blog-post hentry item-post flex-col">
+
+                                        <div class="item-post-inner flex-col">
+                                            <div class="entry-header p-eh flex-col has-meta">
+                                                <nav id="breadcrumb"><a class="home" routerLink="../../home">Home</a>
+                                                    <em class="separator"></em><a class="label" href="javascript:void(0)">{{pTitle}}</a>
+                                                </nav>
+                                                <h1 class="entry-title">{{data?.PageTitle}}</h1>
+                                            </div>
+                                            <div class="entry-content-wrap flex-col">
+                                                <div class="post-body entry-content" [innerHTML]="data?.Description" id="post-body"></div>
+                                            </div>
+                                        </div>
+                                    </article>
+                                    <!-- //Article end -->
+                                </div>
+                                <div class="blog-posts item-post-wrap flex-col" *ngIf="isLoading">
+                                    <article class="blog-post hentry item-post flex-col">
+                                        <div class="item-post-inner flex-col">
+                                            <div class="entry-header p-eh flex-col">
+
+                                            </div>
+                                            <div class="entry-content-wrap flex-col">
+                                                <div class="post-body entry-content ion-text-center" id="post-body">
+                                                    <div class="loader"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+                <app-aside></app-aside>
+            </div>
+        </div>
+        <!-- Footer Wrapper -->
+        <app-footer></app-footer>
+    </ion-content>
+</div>
+<!-- Mobile Menu and Back Top -->
+<app-mobile></app-mobile>

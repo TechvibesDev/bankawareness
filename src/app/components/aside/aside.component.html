@@ -1,0 +1,64 @@
+<!-- Sidebar Wrapper -->
+<aside id="sidebar-wrapper" style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1px;">
+
+    <div class="theiaStickySidebar" style="padding-top: 0px; padding-bottom: 1px; position: static; transform: none; top: 0px; left: 859.5px;">
+        <div class="sidebar flex-col section" id="sidebar" name="Sidebar">
+            <div class="widget LinkList" data-version="2" id="LinkList1">
+                <div class="widget-title title-wrap">
+                    <h3 class="title">Follow Us</h3>
+                </div>
+                <div class="widget-content">
+                    <ul class="social-icons social social-bg">
+                        <li class="facebook link-0">
+                            <a alt="facebook" class="fa-facebook btn" href="javascript:void(0)" rel="noopener noreferrer" target="_blank" title="facebook"><span class="text">Facebook</span></a>
+                        </li>
+                        <li class="twitter link-1">
+                            <a alt="twitter" class="fa-twitter btn" href="javascript:void(0)" rel="noopener noreferrer" target="_blank" title="twitter"><span class="text">Twitter</span></a>
+                        </li>
+                        <li class="youtube link-2">
+                            <a alt="youtube" class="fa-youtube btn" href="javascript:void(0)" rel="noopener noreferrer" target="_blank" title="youtube"><span class="text">YouTube</span></a>
+                        </li>
+                        <li class="instagram link-3">
+                            <a alt="instagram" class="fa-instagram btn" href="javascript:void(0)" rel="noopener noreferrer" target="_blank" title="instagram"><span class="text">Instagram</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="widget PopularPosts" data-version="2" id="PopularPosts2">
+                <div class="widget-title title-wrap">
+                    <h3 class="title">Popular Posts</h3>
+                </div>
+                <div class="widget-content default-items">
+                    <div *ngFor="let x of popular; let i=index" class="default-item ds item-{{i}}">
+                        <a class="entry-image-wrap is-image" href="javascript:void(0)" [title]="x.posttitle">
+                            <span class="entry-image pbt-lazy" [attr.data-image]="x.postimage" style="background-image: url({{x.postimage}});"></span>
+                        </a>
+                        <div class="entry-header">
+                            <h2 class="entry-title">
+                                <a [routerLink]="'./../details/'+x.pid" (click)="navigate(x?.pid,$event)" [title]="x.posttitle">{{x.posttitle}}</a>
+                            </h2>
+                            <div class="entry-meta">
+                                <span class="entry-time mi"><time class="published" [attr.datetime]="x.postdate">{{x.postdate | date:'MMMM dd, yyyy'}}</time></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="widget Label " data-version="2 " id="Label1 ">
+                <div class="widget-title title-wrap ">
+                    <h3 class="title ">Categories</h3>
+                </div>
+                <div class="widget-content list-label ">
+                    <ul class="list-style ">
+                        <li *ngFor="let x of items">
+                            <a class="label-name has-count" [routerLink]="'home'+x.id" (click)="navigate2(x?.id,$event)">{{x.name}}
+                              <span class="label-count count-style ">({{x.count}})</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</aside>

@@ -1,0 +1,7 @@
+{
+    "/api/*": {
+        "target": "http://oluman.com.ng/api",
+        "secure": true,
+        "logLevel": "debug"
+    }
+}

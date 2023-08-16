@@ -1,0 +1,7 @@
+{
+  "name": "fraudawareness",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
